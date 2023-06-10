@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  job1:
+    docker:
+      - image: golang:alpine
+    steps:
+      - run: exit 1
+
+workflows:
+  workflow1:
+    jobs:
+      - job1:
+          context: 
+            - empty-context
